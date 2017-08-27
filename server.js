@@ -7,7 +7,7 @@ app.use(morgan('combined'));
 
 var articles={
     
-    articleone : {
+    'article-one' : {
     title:"Artical one",
     heading:'artical one',
     date : 'sep 5,2017',
@@ -29,7 +29,7 @@ var articles={
             
         </div>`
     },
-    articletwo : {
+    'article-two' : {
     title:"Artical two",
     heading:'artical two',
     date : 'sep 15,2017',
@@ -51,7 +51,7 @@ var articles={
             
         </div>`
     },
-    articlethree : {
+    'article-three' : {
     title:"Artical three",
     heading:'artical three',
     date : 'sep 30,2017',
@@ -126,18 +126,13 @@ app.get('/ui/style.css', function (req, res) {
 });
 
 
-app.get('/artical-one',function(req,res){
-   res.send(createtamplate(articleone)); 
+app.get('/:articalname',function(req,res){
+    
+    var articalname = req.param.articalname;
+   res.send(createtamplate(articles[articalname])); 
         
 });
-app.get('/artical-two',function(req,res){
-   res.send('artical two requested and will be served here'); 
-        
-});
-app.get('/artical-three',function(req,res){
-   res.send('artical three requested and will be served here'); 
-        
-});
+
 
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
