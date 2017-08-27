@@ -121,17 +121,17 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+app.get('/:articalname',function(req,res){
+    
+var articalname = req.params.articalname;
+res.send(createtamplate(articles[articalname])); 
+        
+});
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
-
-app.get('/:articalname',function(req,res){
-    
-    var articalname = req.params.articalname;
-   res.send(createtamplate(articles[articalname])); 
-        
-});
 
 
 app.get('/ui/madi.png', function (req, res) {
