@@ -122,10 +122,10 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/:articalname',function(req,res){
+app.get('/:articlename',function(req,res){
     
-var articalname = req.params.articalname;
-res.send(createtamplate(articles[articalname])); 
+var articlename = req.params.articlename;
+res.send(createtamplate(articles[articlename])); 
         
 });
 
