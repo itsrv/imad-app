@@ -19,10 +19,7 @@ var articleone = {
          Artical one 
              
          </h3>       
-         <div>
-             Sep 5 ,2016
-             
-         </div>
+        
         <div>
             <p>
                 This is the contant for first artical
