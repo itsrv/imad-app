@@ -77,6 +77,7 @@ var articles={
 };
 
 function createtamplate(data){
+    
     var title = data.title;
     var heading = data.heading; 
     var date = data.date;
