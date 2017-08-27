@@ -85,7 +85,7 @@ app.get('/ui/style.css', function (req, res) {
 
 
 app.get('/artical-one',function(req,res){
-   res.send(createtemplate(articleone)); 
+   res.send(createtamplate(articleone)); 
         
 });
 app.get('/artical-two',function(req,res){
