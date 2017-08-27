@@ -5,6 +5,76 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+
+var articleone = {
+    title:"Artical one",
+    heading:'artical one',
+    date : 'sep 5,2017',
+    content: ` 
+        <div>
+            <a href = "/">Home</a>
+        </div>
+        <hr/>
+         <h3>
+         Artical one 
+             
+         </h3>       
+         <div>
+             Sep 5 ,2016
+             
+         </div>
+        <div>
+            <p>
+                This is the contant for first artical
+                
+            </p>
+            
+        </div>`
+    
+    
+};
+
+function createtamplate(){
+    var title = data.title;
+    var heading = data.heading; 
+    var date = data.date;
+    var content = data.content;
+    
+    var htmltemplate =
+        `<html>
+        <head>
+            
+            <title>${title}</title>
+            <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        </head>
+        <body>
+            
+            <div>
+                <a href = "/">Home</a>
+            </div>
+            <hr/>
+             <h3>
+             ${heading} 
+                 
+             </h3>       
+             <div>
+                 ${date}
+                 
+             </div>
+            <div>
+               ${content}
+            </div>  
+            
+            
+        </body>
+        
+    </html>`;
+    
+    return htmltemplate;
+    
+}
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -15,7 +85,7 @@ app.get('/ui/style.css', function (req, res) {
 
 
 app.get('/artical-one',function(req,res){
-   res.sendFile(path.join(__dirname, 'ui', 'artical-one.html')); 
+   res.send(createtemplate(articleone)); 
         
 });
 app.get('/artical-two',function(req,res){
