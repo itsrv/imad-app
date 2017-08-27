@@ -128,7 +128,7 @@ app.get('/ui/style.css', function (req, res) {
 
 app.get('/:articalname',function(req,res){
     
-    var articalname = req.parans.articalname;
+    var articalname = req.params.articalname;
    res.send(createtamplate(articles[articalname])); 
         
 });
